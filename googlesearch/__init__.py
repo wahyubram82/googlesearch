@@ -32,6 +32,7 @@ import os
 import random
 import sys
 import time
+import re
 
 if sys.version_info[0] > 2:
     from http.cookiejar import LWPCookieJar
@@ -199,7 +200,8 @@ def filter_result(link,checktitle):
         # TODO this could be improved!
         o = urlparse(link, 'http')
         if o.netloc and 'google' not in o.netloc:
-            urllabel = checktitle.getText()
+            rex = re.compile('href.+?class.+?\"\>(.+?)\<\/span\>')
+            urllabel = rex.search(checktitle)[1]
             link = urllabel + '--' + link
             return link
 
