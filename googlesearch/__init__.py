@@ -204,9 +204,9 @@ def filter_result(link,checktitle):
             rex = re.compile('href.+?class=\".+?\"\>(.+?)\<\/span\>')
             urllabel = rex.search(checktitle)[1]
             if urllabel is not None:
-                link = urllabel + '--' + link
+                link = urllabel + ' -- ' + link
             else:
-                link = 'No Label for this result' + '--' + link
+                link = 'No Label for this result' + ' -- ' + link
             return link
 
     # On error, return None.
