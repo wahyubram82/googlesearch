@@ -201,7 +201,7 @@ def filter_result(link,checktitle):
         o = urlparse(link, 'http')
         if o.netloc and 'google' not in o.netloc:
             urllabel = None
-            rex = re.compile('href.+?class.+?\"\>(.+?)\<\/span\>')
+            rex = re.compile('href.+?class=\".+?\"\>(.+?)\<\/span\>')
             urllabel = rex.search(checktitle)[1]
             if urllabel is not None:
                 link = urllabel + '--' + link
