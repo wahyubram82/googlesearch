@@ -12,6 +12,8 @@ Usage example
     from googlesearch import search
     for url in search('"Breaking Code" WordPress blog', stop=20):
         print(url)
+        print(url.split(' -- ')[0] #for title only
+        print(url.split(' -- ')[1] #for url only
 
 Another Example with crawling The Label / Titile of URL from google, with time range:
     
