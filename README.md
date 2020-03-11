@@ -59,7 +59,8 @@ Another Example with crawling The Label / Titile of URL from google, with time r
             from newspaper import Article
             article = Article(i)
             #do another command here...
-            #works for me while to crawl news paper for full two month  (60 days)
+            #works for me when i used it to crawl news paper for full two month  (60 days)
+            #I'm contribute because it's works and amazing...
             
             
             
