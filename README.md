@@ -45,8 +45,8 @@ Another Example with crawling The Label / Titile of URL from google, with time r
         cookie_jar.clear()
         
         for i in search(querry, lang = 'id-ID',tbs=timetarget, num=10, start=0, stop=None, pause=3, user_agent=userid):
-            link = i.split('--')[1]
-            label = i.split('--')[0]
+            link = i.split(' -- ')[1]
+            label = i.split(' -- ')[0]
             a, dom, tld = extract(link)
             pure_source = dom + '.' + tld
             print('url label: ', label)
@@ -69,4 +69,6 @@ Another Example with crawling The Label / Titile of URL from google, with time r
 Installing
 ----------
 
+    pip3 install google
+    OR
     pip install google
