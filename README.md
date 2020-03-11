@@ -35,6 +35,7 @@ Another Example with crawling The Label / Titile of URL from google, with time r
     
     #Get all result in last 7 days
     #all variations of 'time limitation for search', depend on your knowledge about datetime module
+    
     for x in range(0,7):
         start_time = date.today() - timedelta(days=(x+1))
         end_time = date.today() - timedelta(days=x)
