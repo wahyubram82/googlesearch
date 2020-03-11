@@ -186,7 +186,7 @@ def get_page(url, user_agent=None):
 
 # Filter links found in the Google result pages HTML code.
 # Returns None if the link doesn't yield a valid result.
-def filter_result(link):
+def filter_result(link,checktitle):
     try:
 
         # Decode hidden URLs.
@@ -199,6 +199,8 @@ def filter_result(link):
         # TODO this could be improved!
         o = urlparse(link, 'http')
         if o.netloc and 'google' not in o.netloc:
+            urllabel = checktitle.getText()
+            link = urllabel + '--' + link
             return link
 
     # On error, return None.
@@ -337,7 +339,7 @@ def search(query, tld='com', lang='en', tbs='0', safe='off', num=10, start=0,
                 continue
 
             # Filter invalid links and links pointing to Google itself.
-            link = filter_result(link)
+            link = filter_result(link,a)
             if not link:
                 continue
 
